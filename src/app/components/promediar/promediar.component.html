@@ -1,0 +1,65 @@
+<section class="card">
+  <form [formGroup]="form" class="card__notes">
+    <h4>
+      <span>
+        Notas actuales a promediar:
+        {{ form.controls["notes"].length }}
+      </span>
+    </h4>
+    <div
+      class="note"
+      formArrayName="notes"
+      (keydown.-)="removeLastNote()"
+      (keydown.r)="reset()"
+    >
+      @for (note of notes.controls; track note; let i = $index) {
+      <div class="note-row" [formGroupName]="i">
+        <mat-form-field appearance="outline">
+          <mat-label>Calificación</mat-label>
+          <input matInput type="number" formControlName="note" />
+          <mat-icon matPrefix>star</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Porcentaje</mat-label>
+          <input matInput type="number" formControlName="percentage" />
+          <mat-icon matPrefix>percent</mat-icon>
+        </mat-form-field>
+        @if (i !== 0) {
+        <button
+          mat-mini-fab
+          color="warn"
+          type="button"
+          matTooltip="Eliminar nota"
+          matTooltipPosition="right"
+          (click)="removeNote(i)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        }
+      </div>
+
+      }
+    </div>
+
+    <button
+      mat-raised-button
+      color="secondary"
+      (click)="addNote()"
+      (keydown.+)="addNote()"
+    >
+      <mat-icon>add</mat-icon>
+      <span>Adicionar nota</span>
+    </button>
+
+    <button
+      mat-fab
+      extended
+      color="primary"
+      (click)="calculateAverage()"
+      (keydown.p)="calculateAverage()"
+    >
+      <mat-icon>calculate</mat-icon>
+      <span>Calcular promedio</span>
+    </button>
+  </form>
+</section>

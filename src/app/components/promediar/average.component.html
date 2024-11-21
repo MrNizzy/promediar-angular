@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Promedio de notas</h2>
+<mat-dialog-content>
+  <p>El promedio actual de tus notas es de:</p>
+  <h3>
+    {{ average.toFixed(2) }}
+  </h3>
+  <p>
+    Para ganar la asignatura necesitas sacar una nota de
+    <strong>{{ passingGrade }}</strong> en el porcentaje restante.
+  </p>
+
+  <p>
+    Recuerda que ganar asignaturas no es solo cuestión de promedios, sino de
+    esfuerzo y dedicación. ¡Sigue adelante!
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>
+    Cerrar
+    <span class="key" matTooltip="Atajo de teclado: ESC"> ESC </span>
+  </button>
+</mat-dialog-actions>
