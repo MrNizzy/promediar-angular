@@ -24,27 +24,26 @@ import {
 } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-promediar',
-  standalone: true,
-  imports: [
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './promediar.component.html',
-  styleUrl: './promediar.component.scss',
-  providers: [
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: {
-        subscriptSizing: 'dynamic',
-      },
-    },
-  ],
+    selector: 'app-promediar',
+    imports: [
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './promediar.component.html',
+    styleUrl: './promediar.component.scss',
+    providers: [
+        {
+            provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+            useValue: {
+                subscriptSizing: 'dynamic',
+            },
+        },
+    ]
 })
 export class PromediarComponent implements OnInit {
   formBuilder = inject(FormBuilder);
@@ -130,10 +129,9 @@ export class PromediarComponent implements OnInit {
 }
 
 @Component({
-  selector: 'app-average',
-  standalone: true,
-  imports: [MatDialogModule, MatIconModule, MatButtonModule, MatTooltipModule],
-  templateUrl: './average.component.html',
+    selector: 'app-average',
+    imports: [MatDialogModule, MatIconModule, MatButtonModule, MatTooltipModule],
+    templateUrl: './average.component.html'
 })
 export class AverageComponent {
   dialogRef = inject(MatDialogRef<AverageComponent>);

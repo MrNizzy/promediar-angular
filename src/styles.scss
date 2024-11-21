@@ -2,16 +2,12 @@
 @use "@angular/material" as mat;
 @use "./themes/light.scss" as light;
 
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 html {
   @include mat.all-component-themes(light.$light-theme);
   // linear gradient
-  background: linear-gradient(
-    90deg,
-    rgba(#ee2677, 0.8) 0%,
-    rgba(#e86252, 0.8) 100%
-  );
 }
 
 html,
@@ -19,6 +15,11 @@ body {
   min-height: 100dvh;
 }
 body {
+  background: linear-gradient(
+    90deg,
+    rgba(#ee2677, 0.8) 0%,
+    rgba(#e86252, 0.8) 100%
+  );
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }

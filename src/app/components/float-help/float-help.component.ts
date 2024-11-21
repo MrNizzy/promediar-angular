@@ -10,11 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-float-help',
-  standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './float-help.component.html',
-  styleUrl: './float-help.component.scss',
+    selector: 'app-float-help',
+    imports: [MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './float-help.component.html',
+    styleUrl: './float-help.component.scss'
 })
 export class FloatHelpComponent {
   dialogRef = inject(MatDialog);
@@ -40,16 +39,15 @@ export class FloatHelpComponent {
 }
 
 @Component({
-  selector: 'app-float-help-dialog',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatTooltipModule,
-  ],
-  templateUrl: './help.dialog.html',
+    selector: 'app-float-help-dialog',
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatDialogModule,
+        MatDividerModule,
+        MatTooltipModule,
+    ],
+    templateUrl: './help.dialog.html'
 })
 export class FloatHelpDialogComponent {}
