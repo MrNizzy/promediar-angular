@@ -1,1 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@use "./themes/light.scss" as light;
+
+@include mat.core();
+
+html {
+  @include mat.all-component-themes(light.$light-theme);
+  // linear gradient
+  background: linear-gradient(
+    90deg,
+    rgba(#ee2677, 0.8) 0%,
+    rgba(#e86252, 0.8) 100%
+  );
+}
+
+html,
+body {
+  min-height: 100dvh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.key {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+  min-width: 1rem;
+  background-color: #2c2c2c;
+  color: #fff;
+  text-align: left;
+  user-select: none;
+  font-family: monospace;
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+}
+
+.key-description {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.key-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.mdc-button:focus,
+a:focus {
+  outline: none;
+}
+
+.mdc-button:focus {
+  border: 2px solid
+    var(--mdc-text-button-label-text-color, var(--mat-app-primary));
+}
+
+a:focus {
+  background-color: var(
+    --mdc-text-button-label-text-color,
+    var(--mat-app-primary)
+  );
+  color: #fff;
+  text-decoration: none;
+}
+
+a {
+  color: var(--mdc-text-button-label-text-color, var(--mat-app-primary));
+  text-decoration: none;
+  transition: all 0.3s;
+  &:hover {
+    color: #fff;
+    background-color: var(
+      --mdc-text-button-label-text-color,
+      var(--mat-app-primary)
+    );
+  }
+}
