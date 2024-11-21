@@ -1,17 +1,9 @@
-$color-red: #ff7979;
-$color-red-accent: #ff4d4d;
-$color-green: #8bf8c2;
-$color-green-accent: #4fffc2;
-$color-blue: #4f93f9;
-$color-blue-accent: #5e9dfc;
-
 .card {
   padding: 2.5rem;
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  background-color: #fff;
-  color: #000;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  background: var(--mat-sys-surface);
   text-align: center;
   font-size: 20px;
   font-weight: 600;
@@ -23,8 +15,8 @@ $color-blue-accent: #5e9dfc;
 
   transition: all 0.3s;
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 4px;
   }
 }
 
@@ -58,28 +50,26 @@ $color-blue-accent: #5e9dfc;
   font-weight: 600;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  background-color: $color-green;
+  background-color: var(--mat-sys-primary-container);
   color: #000;
   transition: all 0.3s;
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
       rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    background-color: $color-green-accent;
+    background-color: var(--mat-sys-primary-container);
   }
 }
 
 .button--submit {
-  background-color: $color-blue;
+  background-color: var(--mat-sys-secondary-container);
   &:hover {
-    background-color: $color-blue-accent;
+    background-color: var(--mat-sys-on-secondary-container);
   }
 }
 
 .button--delete {
-  background-color: $color-red;
-  &:hover {
-    background-color: $color-red-accent;
-  }
+  color: var(--mat-sys-error);
+  background-color: var(--mat-sys-error-container);
 }
 
 @media (max-width: 768px) {

@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
-@use "./themes/light.scss" as light;
+@use "./themes/default.theme.scss" as default-theme;
 
 @include mat.elevation-classes();
 @include mat.app-background();
 
 html {
-  @include mat.all-component-themes(light.$light-theme);
-  // linear gradient
+  color-scheme: light dark;
+  @include mat.theme(
+    (
+      color: default-theme.$tertiary-palette,
+      typography: Roboto,
+      density: 0,
+    )
+  );
 }
 
 html,
@@ -16,9 +22,9 @@ body {
 }
 body {
   background: linear-gradient(
-    90deg,
-    rgba(#ee2677, 0.8) 0%,
-    rgba(#e86252, 0.8) 100%
+    125deg,
+    var(--mat-sys-surface-container),
+    var(--mat-sys-surface)
   );
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -30,8 +36,8 @@ body {
   margin: 0.25rem;
   border-radius: 0.25rem;
   min-width: 1rem;
-  background-color: #2c2c2c;
-  color: #fff;
+  background-color: var(--mat-sys-on-primary-fixed);
+  color: var(--mat-sys-primary-fixed-dim);
   text-align: left;
   user-select: none;
   font-family: monospace;
@@ -67,28 +73,33 @@ a:focus {
 }
 
 .mdc-button:focus {
-  border: 2px solid
-    var(--mdc-text-button-label-text-color, var(--mat-app-primary));
+  outline: 2px solid var(--mat-sys-primary);
 }
 
 a:focus {
-  background-color: var(
-    --mdc-text-button-label-text-color,
-    var(--mat-app-primary)
-  );
-  color: #fff;
+  background-color: var(--mat-sys-primary-container);
+  color: var(--mat-sys-primary);
   text-decoration: none;
 }
 
 a {
-  color: var(--mdc-text-button-label-text-color, var(--mat-app-primary));
+  color: var(--mat-sys-primary);
   text-decoration: none;
   transition: all 0.3s;
   &:hover {
-    color: #fff;
-    background-color: var(
-      --mdc-text-button-label-text-color,
-      var(--mat-app-primary)
+    color: var(--mat-sys-primary-container);
+    background-color: var(--mat-sys-on-background);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    @include mat.theme(
+      (
+        color: default-theme.$primary-palette,
+        typography: Roboto,
+        density: 0,
+      )
     );
   }
 }
