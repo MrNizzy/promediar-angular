@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+  margin: 0 auto;
+  min-height: 100dvh;
+}
+
+.title {
+  display: block;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
