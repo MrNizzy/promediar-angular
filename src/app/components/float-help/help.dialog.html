@@ -1,0 +1,109 @@
+<h2 mat-dialog-title>Ayuda</h2>
+<mat-divider />
+<mat-dialog-content>
+  <section>
+    <h4>Atajos de teclado</h4>
+    <article class="key-list">
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: +"> + </span>
+        Agregar nota al final
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: —"> — </span>
+        Eliminar última nota
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: P"> P </span>
+        Calcular promedio
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: R"> R </span>
+        Reiniciar notas
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: H">H</span>
+        Mostrar/ocultar ayuda
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: I"> I </span>
+        Mostrar/ocultar configuración
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: ESC"> ESC</span>
+        Cerrar diálogo
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: TAB"> TAB </span>
+        Siguiente elemento
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: SHIFT + TAB">
+          SHIFT + TAB
+        </span>
+        Anterior elemento
+      </div>
+      <div class="key-description">
+        <span class="key" matTooltip="Atajo de teclado: ENTER"> ENTER </span>
+        Ejecutar acción
+      </div>
+    </article>
+  </section>
+  <mat-divider style="margin-block: 2rem" />
+  <section>
+    <h4>¿Cómo se calcula el promedio?</h4>
+    <p>
+      Para calcular el promedio debes ingresar las notas con su respectivo
+      porcentaje.
+    </p>
+    <p>
+      Ten en cuenta que al no ingresar un porcentaje, se ignorará la nota. Por
+      otro lado, si el porcentaje es 0, la nota no se tomará en cuenta para el
+      cálculo del promedio.
+    </p>
+    <p>
+      Si deseas eliminar una nota, simplemente haz clic en el botón de eliminar.
+    </p>
+    <p>Para agregar una nueva nota, haz clic en el botón de agregar.</p>
+    <p>Para calcular el promedio, haz clic en el botón de calcular.</p>
+  </section>
+  <mat-divider style="margin-block: 2rem" />
+  <section>
+    <h4>¿Cómo calcular la nota aprobatoria en el porcentaje restante?</h4>
+    <p>
+      Para calcular la nota aprobatoria en el porcentaje restante, se toma en
+      cuenta el promedio actual y el porcentaje restante de la siguiente manera:
+    </p>
+    <p>
+      <code>
+        NotaAprobatoria = (NotaMinima - PromedioActual) / PorcentajeRestante
+      </code>
+    </p>
+    <p>
+      Donde <code>NotaMinima</code> es la nota mínima requerida para aprobar el
+      curso.
+    </p>
+  </section>
+  <mat-divider style="margin-block: 2rem" />
+  <section>
+    <h5>Información adicional</h5>
+    <p>
+      Desarrollado por
+      <a href="https://github.com/MrNizzy" target="_blank">MrNizzy</a>. Código
+      fuente disponible en
+      <a href="https://github.com/MrNizzy/promediar" target="_blank"> GitHub</a
+      >.
+    </p>
+    <p>
+      Creado con ❤️ en
+      <a href="https://angular.dev/" target="_blank">Angular</a> y
+      <a href="https://material.angular.io/" target="_blank">Angular Material</a
+      >.
+    </p>
+  </section>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>
+    Cerrar
+    <span class="key" matTooltip="Atajo de teclado: ESC"> ESC </span>
+  </button>
+</mat-dialog-actions>

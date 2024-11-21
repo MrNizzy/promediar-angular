@@ -1,0 +1,15 @@
+<button
+  mat-fab
+  extended
+  class="help"
+  matTooltip="Ayuda"
+  matTooltipPosition="right"
+  (keydown.h)="toggleHelp()"
+  (click)="toggleHelp()"
+>
+  <mat-icon>help</mat-icon>
+  <span>Ayuda</span>
+  <span class="key" matTooltip="Atajo de teclado: H" matTooltipPosition="right">
+    H
+  </span>
+</button>
