@@ -1,5 +1,5 @@
 import { AverageService } from '@services/average.service';
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -17,38 +17,38 @@ import {
   Validators,
 } from '@angular/forms';
 import {
-  MAT_DIALOG_DATA,
   MatDialog,
   MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
 
 @Component({
-    selector: 'app-promediar',
-    imports: [
-        MatInputModule,
-        MatFormFieldModule,
-        MatButtonModule,
-        MatIconModule,
-        MatTooltipModule,
-        FormsModule,
-        ReactiveFormsModule,
-    ],
-    templateUrl: './promediar.component.html',
-    styleUrl: './promediar.component.scss',
-    providers: [
-        {
-            provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-            useValue: {
-                subscriptSizing: 'dynamic',
-            },
-        },
-    ]
+  selector: 'app-promediar',
+  imports: [
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  templateUrl: './promediar.component.html',
+  styleUrl: './promediar.component.scss',
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: {
+        subscriptSizing: 'dynamic',
+      },
+    },
+  ],
 })
 export class PromediarComponent implements OnInit {
   formBuilder = inject(FormBuilder);
   dialogRef = inject(MatDialog);
-  average = inject(AverageService);
+  averageService = inject(AverageService);
+  average = signal<number>(0);
   open = false;
 
   form = this.formBuilder.group({
@@ -99,9 +99,7 @@ export class PromediarComponent implements OnInit {
 
   @HostListener('document:keydown.p', ['$event'])
   calculateAverage(): void {
-    this.average.calculateAverage(this.notes.value);
-    this.form.controls['average'].setValue(this.average.average());
-    this.calculatePassingGrade();
+    this.averageService.notes.set(this.notes.value); // Save notes on service for use in dialog
 
     if (!this.open) {
       this.open = true;
@@ -115,28 +113,24 @@ export class PromediarComponent implements OnInit {
       });
     }
   }
-
-  calculatePassingGrade(): void {
-    this.average.calculatePassingGrade(
-      this.average.average(),
-      this.notes.value.reduce(
-        (acc: number, note: { note: number; percentage: number }) =>
-          acc + note.percentage,
-        0
-      )
-    );
-  }
 }
 
 @Component({
-    selector: 'app-average',
-    imports: [MatDialogModule, MatIconModule, MatButtonModule, MatTooltipModule],
-    templateUrl: './average.component.html'
+  selector: 'app-average',
+  imports: [MatDialogModule, MatIconModule, MatButtonModule, MatTooltipModule],
+  templateUrl: './average.component.html',
 })
-export class AverageComponent {
+export class AverageComponent implements OnInit {
   dialogRef = inject(MatDialogRef<AverageComponent>);
-  average_ = inject(AverageService);
+  averageService = inject(AverageService);
 
-  average = this.average_.average();
-  passingGrade = this.average_.passingGrade();
+  average = signal<number>(0);
+  passingGrade = signal<number>(0);
+  restPercentage = signal<number>(0);
+
+  ngOnInit(): void {
+    this.average.set(this.averageService.calculateAverage());
+    this.passingGrade.set(this.averageService.calculatePassingGrade());
+    this.restPercentage.set(this.averageService.restPercentage());
+  }
 }

@@ -2,11 +2,12 @@
 <mat-dialog-content>
   <p>El promedio actual de tus notas es de:</p>
   <h3>
-    {{ average.toFixed(2) }}
+    {{ average() }}
   </h3>
   <p>
     Para ganar la asignatura necesitas sacar una nota de
-    <strong>{{ passingGrade }}</strong> en el porcentaje restante.
+    <strong>{{ passingGrade() }}</strong> en el {{ restPercentage() * 100 }}%
+    restante.
   </p>
 
   <p>
