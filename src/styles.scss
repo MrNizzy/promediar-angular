@@ -6,7 +6,7 @@
 @include mat.app-background();
 
 html {
-  color-scheme: light dark;
+  color-scheme: light;
   @include mat.theme(
     (
       color: default-theme.$tertiary-palette,
@@ -94,6 +94,7 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
+    color-scheme: dark;
     @include mat.theme(
       (
         color: default-theme.$primary-palette,
