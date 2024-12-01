@@ -32,6 +32,12 @@ Promediar es una aplicación que te permite calcular el promedio de tus califica
 
 ![Captura de pantalla 1](./public/screenshot.png)
 
+## Tecnologías
+
+- [Angular](https://angular.dev/) (^19.0.0)
+- [TypeScript](https://www.typescriptlang.org/) (~5.5.2)
+- [Angular Material](https://material.angular.io/) (^19.0.0)
+
 ## Instalación
 
 1. Clona el repositorio.
