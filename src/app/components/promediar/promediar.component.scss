@@ -32,11 +32,22 @@
     gap: 1rem;
     .note-row {
       width: 100%;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
       align-items: center;
       gap: 1rem;
     }
   }
+}
+
+.note__reset {
+  background-color: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-secondary);
+}
+
+.note__delete {
+  background-color: var(--mat-sys-error-container);
+  color: var(--mat-sys-error);
 }
 
 .button--add {

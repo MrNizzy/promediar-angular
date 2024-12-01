@@ -27,13 +27,24 @@
         @if (i !== 0) {
         <button
           mat-mini-fab
-          color="warn"
+          class="note__delete"
           type="button"
           matTooltip="Eliminar nota"
           matTooltipPosition="right"
           (click)="removeNote(i)"
         >
           <mat-icon>delete</mat-icon>
+        </button>
+        } @else {
+        <button
+          mat-mini-fab
+          class="note__reset"
+          type="button"
+          matTooltip="Reiniciar notas"
+          matTooltipPosition="right"
+          (click)="reset()"
+        >
+          <mat-icon> refresh </mat-icon>
         </button>
         }
       </div>
