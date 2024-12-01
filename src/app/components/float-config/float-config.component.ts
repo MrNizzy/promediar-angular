@@ -78,6 +78,13 @@ export class FloatConfigComponent {
       display: grid;
       gap: 1rem;
       grid-template-columns: 1fr 1fr;
+    } 
+    .center-text {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 0.5rem;
+      padding: 0.5rem;
     }
   `,
 })

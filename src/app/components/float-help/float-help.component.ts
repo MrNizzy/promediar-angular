@@ -55,5 +55,14 @@ export class FloatHelpComponent {
     MatDividerModule,
   ],
   templateUrl: './help.dialog.html',
+  styles: `
+    .center-text {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+    `,
 })
 export class FloatHelpDialogComponent {}

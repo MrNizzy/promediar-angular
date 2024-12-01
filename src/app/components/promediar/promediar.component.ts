@@ -92,11 +92,9 @@ export class PromediarComponent implements OnInit {
   @HostListener('document:keydown.r', ['$event'])
   reset() {
     this.form.reset();
-    if (this.notes.length === 1 || this.open) {
-      return;
-    }
     this.notes.clear();
     this.notes.push(this.newNote());
+    this.toastr.info('Notas reiniciadas', '¡Listo!');
   }
 
   @HostListener('document:keydown.p', ['$event'])

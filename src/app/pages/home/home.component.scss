@@ -10,10 +10,18 @@
 }
 
 .title {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   font-size: 5rem;
   font-weight: 700;
-  color: var(--mat-sys-primary);
+  background: linear-gradient(
+    125deg,
+    var(--mat-sys-primary),
+    var(--mat-sys-inverse-primary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -31,5 +39,11 @@
 @media (max-width: 480px) {
   .container {
     width: 100%;
+  }
+  .title {
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }
