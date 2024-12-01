@@ -7,7 +7,7 @@ import { Note } from '../models/note.interface';
 export class AverageService {
   public maxPercentage = signal<number>(100);
   public minPassingGrade = signal<number>(3.0);
-  public maxPassingGrade = signal<number>(5.0);
+  public maxNote = signal<number>(5.0);
   public minValidNote = signal<number>(0.0);
   public restPercentage = signal<number>(0);
   public notes = signal<Note[]>([]);
