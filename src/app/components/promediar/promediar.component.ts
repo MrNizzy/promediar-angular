@@ -54,7 +54,6 @@ export class PromediarComponent implements OnInit {
   open = false;
 
   form = this.formBuilder.group({
-    average: [0, Validators.required],
     notes: this.formBuilder.array([this.newNote()]),
   });
 
@@ -92,8 +91,7 @@ export class PromediarComponent implements OnInit {
   @HostListener('document:keydown.r', ['$event'])
   reset() {
     this.form.reset();
-    this.notes.clear();
-    this.notes.push(this.newNote());
+    this.newNote();
     this.toastr.info('Notas reiniciadas', '¡Listo!');
   }
 
