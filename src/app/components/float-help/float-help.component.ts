@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog,
@@ -8,17 +8,24 @@ import {
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { BreakpointService } from '@services/breakpoint.service';
 
 @Component({
-    selector: 'app-float-help',
-    imports: [MatButtonModule, MatIconModule, MatTooltipModule],
-    templateUrl: './float-help.component.html',
-    styleUrl: './float-help.component.scss'
+  selector: 'app-float-help',
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule],
+  templateUrl: './float-help.component.html',
+  styleUrl: './float-help.component.scss',
 })
 export class FloatHelpComponent {
   dialogRef = inject(MatDialog);
+  breakpointService = inject(BreakpointService);
+  isSmallScreen = signal<boolean>(false);
   isDialogOpen = false;
   currentDialogRef: MatDialogRef<FloatHelpDialogComponent> | null = null;
+
+  constructor() {
+    this.isSmallScreen = this.breakpointService.isSmallScreen;
+  }
 
   // Open help on H key press event
   @HostListener('document:keydown.h', ['$event'])
@@ -39,15 +46,14 @@ export class FloatHelpComponent {
 }
 
 @Component({
-    selector: 'app-float-help-dialog',
-    imports: [
-        MatButtonModule,
-        MatIconModule,
-        MatTooltipModule,
-        MatDialogModule,
-        MatDividerModule,
-        MatTooltipModule,
-    ],
-    templateUrl: './help.dialog.html'
+  selector: 'app-float-help-dialog',
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatDividerModule,
+  ],
+  templateUrl: './help.dialog.html',
 })
 export class FloatHelpDialogComponent {}

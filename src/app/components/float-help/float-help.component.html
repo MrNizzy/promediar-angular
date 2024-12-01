@@ -1,3 +1,4 @@
+@if (!isSmallScreen()) {
 <button
   mat-fab
   extended
@@ -13,3 +14,16 @@
     H
   </span>
 </button>
+
+} @else {
+<button
+  mat-fab
+  class="help"
+  matTooltip="Ayuda"
+  matTooltipPosition="right"
+  (keydown.h)="toggleHelp()"
+  (click)="toggleHelp()"
+>
+  <mat-icon>help</mat-icon>
+</button>
+}

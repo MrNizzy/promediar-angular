@@ -1,9 +1,11 @@
+@if (!isSmallScreen()) {
 <button
   mat-fab
   extended
   class="config"
   matTooltip="Configuración de notas"
   matTooltipPosition="left"
+  (click)="toggleConfig()"
 >
   <mat-icon>settings</mat-icon>
   <span>Configuración</span>
@@ -11,3 +13,14 @@
     I
   </span>
 </button>
+} @else {
+<button
+  mat-fab
+  class="config"
+  matTooltip="Configuración de notas"
+  matTooltipPosition="left"
+  (click)="toggleConfig()"
+>
+  <mat-icon>settings</mat-icon>
+</button>
+}

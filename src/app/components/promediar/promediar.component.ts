@@ -66,8 +66,8 @@ export class PromediarComponent implements OnInit {
 
   newNote(): FormGroup {
     return this.formBuilder.group({
-      note: [0, [Validators.required]],
-      percentage: [0, Validators.required],
+      note: [null, [Validators.required]],
+      percentage: [null, Validators.required],
     });
   }
 
