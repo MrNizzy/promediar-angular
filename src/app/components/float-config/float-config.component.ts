@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AverageService } from '@services/average.service';
 import { BreakpointService } from '@services/breakpoint.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-float-config',
@@ -82,6 +83,7 @@ export class FloatConfigComponent {
 })
 export class FloatConfigDialogComponent {
   averageService = inject(AverageService);
+  toastr = inject(ToastrService);
   formBuilder = inject(FormBuilder);
   form = this.formBuilder.group({
     maxPercentage: [
@@ -126,5 +128,7 @@ export class FloatConfigDialogComponent {
     );
     this.averageService.maxNote.set(this.form.value.maxNote || 5.0);
     this.averageService.minValidNote.set(this.form.value.minValidNote || 0.0);
+
+    this.toastr.success('Configuración guardada', 'Éxito');
   }
 }

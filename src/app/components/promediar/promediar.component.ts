@@ -21,6 +21,7 @@ import {
   MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-promediar',
@@ -48,6 +49,7 @@ export class PromediarComponent implements OnInit {
   formBuilder = inject(FormBuilder);
   dialogRef = inject(MatDialog);
   averageService = inject(AverageService);
+  toastr = inject(ToastrService);
   average = signal<number>(0);
   open = false;
 
@@ -99,6 +101,11 @@ export class PromediarComponent implements OnInit {
 
   @HostListener('document:keydown.p', ['$event'])
   calculateAverage(): void {
+    if (this.form.invalid) {
+      this.toastr.error('Por favor, llena todos los campos', '¡Oops!');
+      return;
+    }
+
     this.averageService.notes.set(this.notes.value); // Save notes on service for use in dialog
 
     if (!this.open) {
