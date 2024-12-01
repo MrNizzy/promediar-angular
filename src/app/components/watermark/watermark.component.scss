@@ -36,15 +36,16 @@
   }
 }
 
-.subtitle {
-  color: var(--mat-sys-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.support {
+  display: grid;
   gap: 0.5rem;
-  .highlight {
-    color: var(--mat-sys-secondary);
+  place-items: center;
+  margin: 0.75rem;
+  transition: all 0.3s ease;
+  &:hover {
+    background: none;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
   }
 }
 

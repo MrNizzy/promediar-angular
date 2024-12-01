@@ -85,4 +85,16 @@
       <span>Calcular promedio</span>
     </button>
   </form>
+
+  <h2>
+    Promedio acumulado: <strong>{{ average() }}</strong>
+  </h2>
+  @if (average() >= passingGrade()) {
+  <p><strong>¡Felicidades!</strong> Has aprobado el curso.</p>
+  } @else if (average() > 0) {
+  <p>
+    <strong>Nota mínima</strong> para aprobar: {{ minimumNote() }} en el
+    {{ restPercentage() * 100 }}% restante.
+  </p>
+  }
 </section>

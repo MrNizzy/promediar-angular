@@ -4,11 +4,16 @@
   <h3>
     {{ average() }}
   </h3>
+  @if (passingGrade() <= 0) {
+  <p>¡Felicidades! Ya has ganado la asignatura. ¡Sigue así!</p>
+  } @else {
+
   <p>
     Para ganar la asignatura necesitas sacar una nota de
     <strong>{{ passingGrade() }}</strong> en el {{ restPercentage() * 100 }}%
     restante.
   </p>
+  }
 
   <p>
     Recuerda que ganar asignaturas no es solo cuestión de promedios, sino de

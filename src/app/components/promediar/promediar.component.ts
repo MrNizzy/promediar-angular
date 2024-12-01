@@ -51,6 +51,9 @@ export class PromediarComponent implements OnInit {
   averageService = inject(AverageService);
   toastr = inject(ToastrService);
   average = signal<number>(0);
+  minimumNote = signal<number>(0);
+  restPercentage = signal<number>(0);
+  passingGrade = signal<number>(this.averageService.minPassingGrade());
   open = false;
 
   form = this.formBuilder.group({
@@ -92,6 +95,7 @@ export class PromediarComponent implements OnInit {
   reset() {
     this.form.reset();
     this.newNote();
+    this.average.set(0);
     this.toastr.info('Notas reiniciadas', '¡Listo!');
   }
 
@@ -103,6 +107,10 @@ export class PromediarComponent implements OnInit {
     }
 
     this.averageService.notes.set(this.notes.value); // Save notes on service for use in dialog
+    this.average.set(this.averageService.calculateAverage());
+    this.minimumNote.set(this.averageService.calculatePassingGrade());
+    this.restPercentage.set(this.averageService.restPercentage());
+    this.passingGrade.set(this.averageService.minPassingGrade());
 
     if (!this.open) {
       this.open = true;
