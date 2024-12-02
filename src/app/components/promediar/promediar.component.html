@@ -73,17 +73,20 @@
       <span>Adicionar nota</span>
     </button>
 
-    <button
-      mat-fab
-      extended
-      color="primary"
-      (click)="calculateAverage()"
-      (keydown.p)="calculateAverage()"
-      type="submit"
-    >
-      <mat-icon>calculate</mat-icon>
-      <span>Calcular promedio</span>
-    </button>
+    <div class="button-group">
+      <button
+        mat-fab
+        extended
+        color="primary"
+        (click)="calculateAverage()"
+        (keydown.p)="calculateAverage()"
+        type="submit"
+      >
+        <mat-icon>calculate</mat-icon>
+        <span>Calcular promedio</span>
+      </button>
+      <app-download-image />
+    </div>
   </form>
 
   <h2>

@@ -22,6 +22,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { DownloadImageComponent } from '../download-image/download-image.component';
 
 @Component({
   selector: 'app-promediar',
@@ -33,6 +34,7 @@ import { ToastrService } from 'ngx-toastr';
     MatTooltipModule,
     FormsModule,
     ReactiveFormsModule,
+    DownloadImageComponent,
   ],
   templateUrl: './promediar.component.html',
   styleUrl: './promediar.component.scss',

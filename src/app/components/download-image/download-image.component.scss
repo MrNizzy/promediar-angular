@@ -1,0 +1,10 @@
+.button--download {
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  transition: 0.2s ease-in-out all;
+  &:hover {
+    background-color: var(--mat-sys-surface-tint);
+    color: var(--mat-sys-surface-dim);
+    transition: 0.2s ease-in-out all;
+  }
+}

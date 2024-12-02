@@ -1,0 +1,52 @@
+.menu-download {
+  display: flex;
+  gap: 0;
+  > button {
+    color: var(--mat-sys-primary);
+    background-color: var(--mat-sys-primary-container);
+    border: 1px solid var(--mat-sys-primary-border);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: 0.2s ease-in-out all;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    &:hover {
+      color: var(--mat-sys-on-primary);
+      background-color: var(--mat-sys-on-primary-container);
+    }
+    &:first-child {
+      border-radius: 2rem 0 0 2rem;
+    }
+    &:last-child {
+      border-radius: 0 2rem 2rem 0;
+      background-color: var(--mat-sys-on-primary-fixed);
+      &:hover {
+        background-color: var(--mat-sys-on-primary-container);
+      }
+    }
+  }
+}
+
+.content {
+  border-radius: 1rem;
+  h1 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+    background: linear-gradient(
+      125deg,
+      var(--mat-sys-primary),
+      var(--mat-sys-secondary)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  margin: 1rem 0;
+  padding: 1rem;
+  color: var(--mat-sys-on-surface);
+  background-color: var(--mat-sys-surface);
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+}

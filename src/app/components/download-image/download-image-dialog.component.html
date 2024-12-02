@@ -1,0 +1,102 @@
+<h1 mat-dialog-title>Descargar imagen</h1>
+<mat-dialog-content #content class="content">
+  <h1>Promediar</h1>
+  <table mat-table [dataSource]="notes()" class="mat-elevation-z8">
+    <ng-container matColumnDef="Nota">
+      <th mat-header-cell *matHeaderCellDef>Nota</th>
+      <td mat-cell *matCellDef="let cell">{{ cell.note }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Porcentaje">
+      <th mat-header-cell *matHeaderCellDef>Porcentaje</th>
+      <td mat-cell *matCellDef="let cell">{{ cell.percentage }}%</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <h2>
+    <span>Promedio de notas: </span>
+    <span>{{ average() }}</span>
+  </h2>
+  @if (passingGrade() <= 0) {
+  <p>¡Felicidades! Ya has ganado la asignatura. ¡Sigue así!</p>
+  } @else {
+
+  <p>
+    Para ganar la asignatura necesitas sacar una nota de
+    <strong>{{ passingGrade() }}</strong> en el {{ restPercentage() * 100 }}%
+    restante.
+  </p>
+  }
+  <a href="https://github.com/MrNizzy"> https://github.com/MrNizzy </a>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>
+    Cancelar
+    <span class="key" matTooltip="Atajo de teclado: ESC"> ESC </span>
+  </button>
+  <div class="menu-download">
+    <button (keydown.s)="saveImage()" (click)="saveImage()">
+      Descargar
+      <span class="key" matTooltip="Atajo de teclado: s"> S </span>
+    </button>
+    <button [mat-menu-trigger-for]="format">
+      <mat-icon>arrow_drop_down</mat-icon>
+      @if (imageType() == 'png') { PNG } @else if (imageType() == 'jpeg') { JPEG
+      } @else if (imageType() == 'svg') { SVG }
+    </button>
+  </div>
+</mat-dialog-actions>
+
+<mat-menu #format="matMenu">
+  <button mat-menu-item (click)="changeImageType('png')">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 15 15"
+    >
+      <path fill="currentColor" d="M3 8h.5a.5.5 0 0 0 0-1H3z" />
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M1 1.5A1.5 1.5 0 0 1 2.5 0h8.207L14 3.293V13.5a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 1 13.5zM2 6h1.5a1.5 1.5 0 1 1 0 3H3v2H2zm8 0h3v1h-2v3h1V8.5h1V11h-3zM7 8.618V11H6V6h1v.382l1 2V6h1v5H8v-.382z"
+        clip-rule="evenodd"
+      />
+    </svg>
+    PNG
+  </button>
+  <button mat-menu-item (click)="changeImageType('jpeg')">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 15 15"
+    >
+      <path fill="currentColor" d="M7 8h.5a.5.5 0 0 0 0-1H7z" />
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M1 1.5A1.5 1.5 0 0 1 2.5 0h8.207L14 3.293V13.5a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 1 13.5zM4 7H2V6h3v5H2V9h1v1h1zm2-1h1.5a1.5 1.5 0 1 1 0 3H7v2H6zm4 0h3v1h-2v3h1V8.5h1V11h-3z"
+        clip-rule="evenodd"
+      />
+    </svg>
+    JPEG
+  </button>
+  <button mat-menu-item (click)="changeImageType('svg')">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 15 15"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M1 1.5A1.5 1.5 0 0 1 2.5 0h8.207L14 3.293V13.5a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 1 13.5zM5 6H2v3h2v1H2v1h3V8H3V7h2zm2 0H6v3.707l1.5 1.5l1.5-1.5V6H8v3.293l-.5.5l-.5-.5zm3 0h3v1h-2v3h1V8.5h1V11h-3z"
+        clip-rule="evenodd"
+      />
+    </svg>
+    SVG
+  </button>
+</mat-menu>

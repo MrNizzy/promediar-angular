@@ -81,6 +81,12 @@
   background-color: var(--mat-sys-error-container);
 }
 
+.button-group {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr auto;
+}
+
 @media (max-width: 768px) {
   .card {
     padding: 1.5rem;
