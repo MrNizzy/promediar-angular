@@ -99,4 +99,7 @@
     padding: 1rem;
     width: 90%;
   }
+  .button-group {
+    grid-template-columns: 1fr;
+  }
 }
