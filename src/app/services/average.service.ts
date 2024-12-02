@@ -25,7 +25,7 @@ export class AverageService {
       (acc: number, note: Note) => acc + note.percentage,
       0
     );
-    return percentageAccumulated;
+    return parseFloat(percentageAccumulated.toFixed(2));
   }
 
   public calculatePassingGrade(): number {
