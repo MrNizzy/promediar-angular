@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FloatConfigComponent } from '@components/float-config/float-config.component';
 import { FloatHelpComponent } from '@components/float-help/float-help.component';
 import { PromediarComponent } from '@components/promediar/promediar.component';
@@ -14,5 +14,6 @@ import { WatermarkComponent } from '../../components/watermark/watermark.compone
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {}

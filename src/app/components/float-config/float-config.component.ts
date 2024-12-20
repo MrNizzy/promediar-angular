@@ -1,4 +1,10 @@
-import { Component, HostListener, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  inject,
+  signal,
+} from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -25,6 +31,7 @@ import { ToastrService } from 'ngx-toastr';
   imports: [MatIconModule, MatButtonModule, MatTooltipModule],
   templateUrl: './float-config.component.html',
   styleUrl: './float-config.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FloatConfigComponent {
   dialogRef = inject(MatDialog);

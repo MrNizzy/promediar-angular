@@ -1,5 +1,12 @@
 import { AverageService } from '@services/average.service';
-import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -38,6 +45,7 @@ import { DownloadImageComponent } from '../download-image/download-image.compone
   ],
   templateUrl: './promediar.component.html',
   styleUrl: './promediar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -132,6 +140,7 @@ export class PromediarComponent implements OnInit {
   selector: 'app-average',
   imports: [MatDialogModule, MatIconModule, MatButtonModule, MatTooltipModule],
   templateUrl: './average.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AverageComponent implements OnInit {
   dialogRef = inject(MatDialogRef<AverageComponent>);

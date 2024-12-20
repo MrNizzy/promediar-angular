@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostListener,
@@ -27,6 +28,7 @@ import { ToastrService } from 'ngx-toastr';
   imports: [MatButtonModule, MatIconModule, MatMenuModule, MatTooltipModule],
   templateUrl: './download-image.component.html',
   styleUrl: './download-image.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DownloadImageComponent {
   dialogRef = inject(MatDialog);
@@ -74,6 +76,7 @@ export class DownloadImageComponent {
   ],
   templateUrl: './download-image-dialog.component.html',
   styleUrl: './download-image-dialog.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DownloadImageDialogComponent {
   averageService = inject(AverageService);
