@@ -42,6 +42,7 @@
           matTooltip="Eliminar nota"
           matTooltipPosition="right"
           (click)="removeNote(i)"
+          aria-label="Eliminar nota"
         >
           <mat-icon>delete</mat-icon>
         </button>
@@ -53,6 +54,7 @@
           matTooltip="Reiniciar notas"
           matTooltipPosition="right"
           (click)="reset()"
+          aria-label="Reiniciar notas"
         >
           <mat-icon> refresh </mat-icon>
         </button>
@@ -68,6 +70,7 @@
       (click)="addNote()"
       (keydown.+)="addNote()"
       type="button"
+      aria-label="Agregar nota"
     >
       <mat-icon>add</mat-icon>
       <span>Adicionar nota</span>
@@ -81,6 +84,7 @@
         (click)="calculateAverage()"
         (keydown.p)="calculateAverage()"
         type="submit"
+        title="Calcular promedio"
       >
         <mat-icon>calculate</mat-icon>
         <span>Calcular promedio</span>

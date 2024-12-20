@@ -12,15 +12,30 @@
   <mat-dialog-content class="form">
     <mat-form-field appearance="outline">
       <mat-label> Nota mínima </mat-label>
-      <input matInput type="number" formControlName="minValidNote" />
+      <input
+        matInput
+        type="number"
+        formControlName="minValidNote"
+        aria-label="Ingresar nota mínima"
+      />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label> Nota máxima </mat-label>
-      <input matInput type="number" formControlName="maxNote" />
+      <input
+        matInput
+        type="number"
+        formControlName="maxNote"
+        aria-label="Ingresar nota máxima"
+      />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label> Nota aprobatoria </mat-label>
-      <input matInput type="number" formControlName="minPassingGrade" />
+      <input
+        matInput
+        type="number"
+        formControlName="minPassingGrade"
+        aria-label="Ingresar nota aprobatoria"
+      />
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>

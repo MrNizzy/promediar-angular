@@ -129,12 +129,12 @@ export class FloatConfigDialogComponent {
   });
 
   save(): void {
-    this.averageService.maxPercentage.set(this.form.value.maxPercentage || 100);
+    this.averageService.maxPercentage.set(this.form.value.maxPercentage ?? 100);
     this.averageService.minPassingGrade.set(
-      this.form.value.minPassingGrade || 3.0
+      this.form.value.minPassingGrade ?? 3.0
     );
-    this.averageService.maxNote.set(this.form.value.maxNote || 5.0);
-    this.averageService.minValidNote.set(this.form.value.minValidNote || 0.0);
+    this.averageService.maxNote.set(this.form.value.maxNote ?? 5.0);
+    this.averageService.minValidNote.set(this.form.value.minValidNote ?? 0.0);
 
     this.toastr.success('Configuración guardada', 'Éxito');
   }

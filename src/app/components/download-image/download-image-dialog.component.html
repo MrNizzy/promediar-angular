@@ -31,16 +31,23 @@
   <a href="https://github.com/MrNizzy"> https://github.com/MrNizzy </a>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>
+  <button mat-button mat-dialog-close aria-label="Cancelar">
     Cancelar
     <span class="key" matTooltip="Atajo de teclado: ESC"> ESC </span>
   </button>
   <div class="menu-download">
-    <button (keydown.s)="saveImage()" (click)="saveImage()">
+    <button
+      (keydown.s)="saveImage()"
+      (click)="saveImage()"
+      aria-label="Descargar imagen"
+    >
       Descargar
       <span class="key" matTooltip="Atajo de teclado: s"> S </span>
     </button>
-    <button [mat-menu-trigger-for]="format">
+    <button
+      [mat-menu-trigger-for]="format"
+      aria-label="Seleccionar tipo de imagen"
+    >
       <mat-icon>arrow_drop_down</mat-icon>
       @if (imageType() == 'png') { PNG } @else if (imageType() == 'jpeg') { JPEG
       } @else if (imageType() == 'svg') { SVG }
