@@ -76,6 +76,7 @@ export class FloatConfigComponent {
     MatInputModule,
   ],
   templateUrl: './config.dialog.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     .save__button {
       background-color: var(--mat-sys-primary-container);

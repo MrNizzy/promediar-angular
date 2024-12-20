@@ -49,8 +49,8 @@
       aria-label="Seleccionar tipo de imagen"
     >
       <mat-icon>arrow_drop_down</mat-icon>
-      @if (imageType() == 'png') { PNG } @else if (imageType() == 'jpeg') { JPEG
-      } @else if (imageType() == 'svg') { SVG }
+      @if (imageType() === 'png') { PNG } @else if (imageType() === 'jpeg') {
+      JPEG } @else if (imageType() === 'svg') { SVG }
     </button>
   </div>
 </mat-dialog-actions>

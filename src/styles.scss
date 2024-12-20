@@ -1,18 +1,13 @@
 @use "@angular/material" as mat;
-@use "./themes/default.theme.scss" as default-theme;
-@use "./themes/toastr.scss";
+@use "styles/fonts.scss";
+@use "./styles/themes/default.theme.scss" as default-theme;
+@use "./styles/themes/toastr.scss";
 
 @include mat.elevation-classes();
 @include mat.app-background();
 
-@font-face {
-  font-family: "Bai Jamjuree";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Bai Jamjuree"),
-    url("../public/fonts/BaiJamjuree-Regular.woff2") format("woff2"),
-    format("woff2");
-  font-display: swap;
+:root {
+  color-scheme: light dark;
 }
 
 html {
@@ -37,12 +32,6 @@ body {
     var(--mat-sys-surface)
   );
   margin: 0;
-}
-
-* {
-  font-family: "Bai Jamjuree", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
 }
 
 .key {

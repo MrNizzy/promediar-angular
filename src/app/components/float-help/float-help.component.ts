@@ -1,4 +1,10 @@
-import { Component, HostListener, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  inject,
+  signal,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog,
@@ -15,6 +21,7 @@ import { BreakpointService } from '@services/breakpoint.service';
   imports: [MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './float-help.component.html',
   styleUrl: './float-help.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FloatHelpComponent {
   dialogRef = inject(MatDialog);
@@ -55,6 +62,7 @@ export class FloatHelpComponent {
     MatDividerModule,
   ],
   templateUrl: './help.dialog.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     .center-text {
       display: flex;

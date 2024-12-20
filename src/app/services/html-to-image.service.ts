@@ -27,9 +27,9 @@ export class HtmlToImageService {
   }
 
   private download(dataUrl: string, filename: string) {
-    var img = new Image();
+    const img = new Image();
     img.src = dataUrl;
-    var link = document.createElement('a');
+    const link = document.createElement('a');
     link.download = filename;
     link.href = dataUrl;
     link.click();

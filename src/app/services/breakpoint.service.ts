@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { inject, Injectable, OnInit, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',

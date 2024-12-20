@@ -6,12 +6,7 @@
         {{ form.controls["notes"].length }}
       </span>
     </h4>
-    <div
-      class="note"
-      formArrayName="notes"
-      (keydown.-)="removeLastNote()"
-      (keydown.r)="reset()"
-    >
+    <div class="note" formArrayName="notes">
       @for (note of notes.controls; track note; let i = $index) {
       <div class="note-row" [formGroupName]="i">
         <mat-form-field appearance="outline">
@@ -43,6 +38,7 @@
           matTooltipPosition="right"
           (click)="removeNote(i)"
           aria-label="Eliminar nota"
+          (keydown.-)="removeLastNote()"
         >
           <mat-icon>delete</mat-icon>
         </button>
@@ -54,6 +50,7 @@
           matTooltip="Reiniciar notas"
           matTooltipPosition="right"
           (click)="reset()"
+          (keydown.r)="reset()"
           aria-label="Reiniciar notas"
         >
           <mat-icon> refresh </mat-icon>
