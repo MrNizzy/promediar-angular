@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
 @use "./themes/default.theme.scss" as default-theme;
 @use "./themes/toastr.scss";
@@ -8,7 +7,10 @@
 
 @font-face {
   font-family: "Bai Jamjuree";
-  src: url("../public/fonts/BaiJamjuree-Regular.woff2") format("truetype"),
+  font-style: normal;
+  font-weight: 400;
+  src: local("Bai Jamjuree"),
+    url("../public/fonts/BaiJamjuree-Regular.woff2") format("woff2"),
     format("woff2");
   font-display: swap;
 }
