@@ -23,6 +23,7 @@
     "@angular/service-worker": "^19.0.0",
     "html-to-image": "^1.11.11",
     "ngx-toastr": "^19.0.0",
+    "promediar": "file:",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
