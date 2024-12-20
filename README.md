@@ -18,16 +18,17 @@ Promediar es una aplicación que te permite calcular el promedio de tus califica
 ## Características
 
 ✅ Características completadas
+
 ❌ Características pendientes
 
 - ✅ Calcula el promedio de tus calificaciones.
 - ✅ Permite cambiar la configuración de tus notas.
 - ✅ Calcula cuánto necesitas en tu próxima nota para pasar la materia.
 - ✅ Instalable en dispositivos móviles y de escritorio (PWA).
+- ✅ Exportar como imagen el promedio.
 - ❌ Guarda tus notas en el almacenamiento local para evitar perderlas al cerrar la aplicación.
 - ❌ Exportar promedio a un archivo de texto.
 - ❌ Importar promedio desde un archivo de texto.
-- ❌ Exportar como imagen el promedio.
 
 ## Capturas de pantalla
 
