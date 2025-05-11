@@ -12,7 +12,13 @@
         }
       },
       "i18n": {
-        "sourceLocale": "es-CO"
+        "sourceLocale": "es-CO",
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.json",
+            "baseHref": "/en/"
+          }
+        }
       },
       "root": "",
       "sourceRoot": "src",
@@ -27,6 +33,7 @@
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "localize": true,
             "assets": [
               {
                 "glob": "**/*",

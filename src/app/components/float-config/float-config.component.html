@@ -9,7 +9,7 @@
   aria-label="Configuración"
 >
   <mat-icon>settings</mat-icon>
-  <span>Configuración</span>
+  <span i18n>Configuración</span>
   <span class="key" matTooltip="Atajo de teclado: I" matTooltipPosition="right">
     I
   </span>
@@ -22,6 +22,8 @@
   matTooltipPosition="left"
   (click)="toggleConfig()"
   aria-label="Configuración"
+  i18n-aria-label
+  i18n-matTooltip
 >
   <mat-icon>settings</mat-icon>
 </button>

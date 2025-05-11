@@ -13,6 +13,8 @@
     <img alt="YouTube subscribers" title="Subscribe to my YouTube channel" src="https://custom-icon-badges.demolab.com/youtube/channel/subscribers/UCFjfIk29NqqPGmrCfCV14Yg?color=a80f23&label=SUBSCRIBE&logo=video&logoColor=white&style=for-the-badge&labelColor=c70f23"/>
 </a>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a22fd562-9f1a-44e8-a744-cf6027fc121b/deploy-status)](https://app.netlify.com/sites/promediar/deploys)
+
 Promediar es una aplicación que te permite calcular el promedio de tus calificaciones de una forma rápida y sencilla.
 
 ## Características

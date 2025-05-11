@@ -1,0 +1,24 @@
+{
+  "locale": "en",
+  "translations": {
+    "6076319951837431770": "Settings",
+    "597217415125439905": "Grade Settings",
+    "67890544561792238": "Help",
+    "8800345512666867245": " H ",
+    "1585240816018741504": "Grade Average",
+    "7708270344948043036": " {$INTERPOLATION} ",
+    "852035540499018088": " To pass the subject, you need to score {$START_TAG_STRONG}{$INTERPOLATION}{$CLOSE_TAG_STRONG} in the remaining {$INTERPOLATION_1}%. ",
+    "6290550070168979650": " Remember that passing subjects is not just about averages, but about effort and dedication. Keep going! ",
+    "1072433360193518517": " Close {$START_TAG_SPAN} ESC {$CLOSE_TAG_SPAN}",
+    "2339290245419084314": " Current grades to average: {$INTERPOLATION} ",
+    "4062077207205566613": "Grade",
+    "6238544145676490479": "Percentage",
+    "5182387656200717321": "Add grade",
+    "231822816399169879": "Calculate average",
+    "1448588344984766445": " Accumulated average: {$START_TAG_STRONG}{$INTERPOLATION}{$CLOSE_TAG_STRONG}",
+    "1298971127748740159": "{$START_TAG_STRONG}Congratulations!{$CLOSE_TAG_STRONG} You have passed the course.",
+    "7797136570484491436": "{$START_TAG_STRONG}Minimum grade{$CLOSE_TAG_STRONG} to pass: {$INTERPOLATION} in the remaining {$INTERPOLATION_1}%. ",
+    "8751265564564578671": "Light skin tone teacher",
+    "4002493648279394908": "Average"
+  }
+}

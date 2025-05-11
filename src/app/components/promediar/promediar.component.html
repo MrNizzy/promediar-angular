@@ -1,7 +1,7 @@
 <section class="card">
   <form [formGroup]="form" class="card__notes">
     <h4>
-      <span>
+      <span i18n>
         Notas actuales a promediar:
         {{ form.controls["notes"].length }}
       </span>
@@ -10,7 +10,7 @@
       @for (note of notes.controls; track note; let i = $index) {
       <div class="note-row" [formGroupName]="i">
         <mat-form-field appearance="outline">
-          <mat-label>Calificación</mat-label>
+          <mat-label i18n>Calificación</mat-label>
           <input
             matInput
             type="number"
@@ -20,7 +20,7 @@
           <mat-icon matPrefix>star</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Porcentaje</mat-label>
+          <mat-label i18n>Porcentaje</mat-label>
           <input
             matInput
             type="number"
@@ -70,7 +70,7 @@
       aria-label="Agregar nota"
     >
       <mat-icon>add</mat-icon>
-      <span>Adicionar nota</span>
+      <span i18n>Adicionar nota</span>
     </button>
 
     <div class="button-group">
@@ -84,19 +84,19 @@
         title="Calcular promedio"
       >
         <mat-icon>calculate</mat-icon>
-        <span>Calcular promedio</span>
+        <span i18n>Calcular promedio</span>
       </button>
       <app-download-image />
     </div>
   </form>
 
-  <h2>
+  <h2 i18n>
     Promedio acumulado: <strong>{{ average() }}</strong>
   </h2>
   @if (average() >= passingGrade()) {
-  <p><strong>¡Felicidades!</strong> Has aprobado el curso.</p>
+  <p i18n><strong>¡Felicidades!</strong> Has aprobado el curso.</p>
   } @else if (average() > 0) {
-  <p>
+  <p i18n>
     <strong>Nota mínima</strong> para aprobar: {{ minimumNote() }} en el
     {{ restPercentage() * 100 }}% restante.
   </p>

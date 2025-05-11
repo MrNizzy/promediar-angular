@@ -1,27 +1,27 @@
-<h2 mat-dialog-title>Promedio de notas</h2>
+<h2 mat-dialog-title i18n>Promedio de notas</h2>
 <mat-dialog-content>
   <p>El promedio actual de tus notas es de:</p>
-  <h3 aria-label="Promedio actual de notas">
+  <h3 aria-label="Promedio actual de notas" i18n>
     {{ average() }}
   </h3>
   @if (passingGrade() <= 0) {
   <p>¡Felicidades! Ya has ganado la asignatura. ¡Sigue así!</p>
   } @else {
 
-  <p>
+  <p i18n>
     Para ganar la asignatura necesitas sacar una nota de
     <strong>{{ passingGrade() }}</strong> en el {{ restPercentage() * 100 }}%
     restante.
   </p>
   }
 
-  <p>
+  <p i18n>
     Recuerda que ganar asignaturas no es solo cuestión de promedios, sino de
     esfuerzo y dedicación. ¡Sigue adelante!
   </p>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>
+  <button mat-button mat-dialog-close aria-label="Cerrar diálogo" i18n>
     Cerrar
     <span class="key" matTooltip="Atajo de teclado: ESC"> ESC </span>
   </button>

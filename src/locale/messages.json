@@ -1,0 +1,24 @@
+{
+  "locale": "es-CO",
+  "translations": {
+    "6076319951837431770": "Configuración",
+    "597217415125439905": "Configuración de notas",
+    "67890544561792238": "Ayuda",
+    "8800345512666867245": " H ",
+    "1585240816018741504": "Promedio de notas",
+    "7708270344948043036": " {$INTERPOLATION} ",
+    "852035540499018088": " Para ganar la asignatura necesitas sacar una nota de {$START_TAG_STRONG}{$INTERPOLATION}{$CLOSE_TAG_STRONG} en el {$INTERPOLATION_1}% restante. ",
+    "6290550070168979650": " Recuerda que ganar asignaturas no es solo cuestión de promedios, sino de esfuerzo y dedicación. ¡Sigue adelante! ",
+    "1072433360193518517": " Cerrar {$START_TAG_SPAN} ESC {$CLOSE_TAG_SPAN}",
+    "2339290245419084314": " Notas actuales a promediar: {$INTERPOLATION} ",
+    "4062077207205566613": "Calificación",
+    "6238544145676490479": "Porcentaje",
+    "5182387656200717321": "Adicionar nota",
+    "231822816399169879": "Calcular promedio",
+    "1448588344984766445": " Promedio acumulado: {$START_TAG_STRONG}{$INTERPOLATION}{$CLOSE_TAG_STRONG}",
+    "1298971127748740159": "{$START_TAG_STRONG}¡Felicidades!{$CLOSE_TAG_STRONG} Has aprobado el curso.",
+    "7797136570484491436": "{$START_TAG_STRONG}Nota mínima{$CLOSE_TAG_STRONG} para aprobar: {$INTERPOLATION} en el {$INTERPOLATION_1}% restante. ",
+    "8751265564564578671": "Profesor tono de piel claro",
+    "4002493648279394908": "Promediar"
+  }
+}
